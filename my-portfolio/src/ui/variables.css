@@ -1,0 +1,11 @@
+/* variables.css */
+:root {
+  --scrolldown-color: white;
+  --scrolldown-sizeX: 30px;
+  --scrolldown-sizeY: 50px;
+  --chevrons-width: 30px;
+  --chevron-border-size: 3px;
+  --animation-duration: 2s;
+  --animation-opacity-from: 0;
+  --animation-opacity-to: 0.5;
+}
