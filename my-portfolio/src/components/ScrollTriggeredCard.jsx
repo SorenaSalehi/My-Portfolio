@@ -1,6 +1,17 @@
 import { motion } from "motion/react";
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { green, grey, red } from "@mui/material/colors";
+import React, { useState } from "react";
+
+import {
+  Box,
+  Button,
+  Divider,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import ToggleBtn from "./ToggleBtn";
+import { link } from "motion/react-client";
+import { red } from "@mui/material/colors";
 
 const cardVariants = {
   offscreen: {
@@ -57,15 +68,24 @@ const mobileCard = {
   justifyContent: "center",
   alignItems: "center",
   borderRadius: 20,
-  // boxShadow:
-  //   "0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075), 0 0 16px hsl(0deg 0% 0% / 0.075)",
+
   transformOrigin: "-55% 60%",
 };
 
-export default function Card({ img, sticker, headline, paragraph, i }) {
+export default function Card({
+  i,
+  img,
+  headline,
+  paragraph,
+  tech,
+  link,
+  on,
+  attention,
+}) {
+  const [alignment, setAlignment] = useState("description");
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const background = `${i % 2 === 0 ? green : red}`;
+  const background = "#4B5945";
 
   return (
     <Box
@@ -81,6 +101,7 @@ export default function Card({ img, sticker, headline, paragraph, i }) {
         gap: { md: "1rem" },
         px: { md: "4rem" },
       }}
+      component={"li"}
     >
       <motion.div
         className={`card-container-${i}`}
@@ -111,8 +132,8 @@ export default function Card({ img, sticker, headline, paragraph, i }) {
       </motion.div>
 
       <Box
-        // bgcolor={colorLibrary.bgSecondary}
-        margin={"1rem 0.5rem"}
+        component={"div"}
+        className="card-paragraph"
         borderRadius={"0.8rem"}
         overflow={"hidden"}
         sx={{
@@ -123,43 +144,61 @@ export default function Card({ img, sticker, headline, paragraph, i }) {
       >
         <Box
           display={"flex"}
+          flexDirection={"column"}
           justifyContent={"center"}
           alignItems={"center"}
-          // bgcolor={colorLibrary.bgPrimaryLight}
         >
           <Typography
             variant="h5"
-            // color={colorLibrary.title}
+            color={"background.default"}
             textAlign={"center"}
             my={"1rem"}
             px={"1rem"}
           >
             {headline}
           </Typography>
-          <Box
-            component="img"
-            src={sticker}
-            alt={headline}
-            sx={{
-              height: "3rem",
-              width: "auto",
-              maxWidth: "100%",
-              paddingRight: "1rem",
-            }}
-          />
+
+          <Typography variant="caption" justifySelf={"start"}>
+            Start on: {on}
+          </Typography>
+          {attention && (
+            <Typography variant="caption" justifySelf={"end"} color={red[300]}>
+              Attention: {attention}
+            </Typography>
+          )}
         </Box>
 
-        <Typography
-          variant="h6"
-          // color={colorLibrary.text}
-          textAlign={"match-parent"}
-          padding={"1rem"}
-          mx={"0.5rem"}
-          // bgcolor={colorLibrary.bgSecondary1}
-          borderRadius={"0.5rem"}
-        >
-          {paragraph}
-        </Typography>
+        {/* //*toggle btn */}
+        <ToggleBtn alignment={alignment} setAlignment={setAlignment} />
+
+        <Box padding={"0  0.8em 0.8em 1.2em"}>
+          {alignment === "description" &&
+            paragraph?.map((item, i) => (
+              <React.Fragment key={i}>
+                <Typography paddingTop={"0.5em"}>{item.sec}</Typography>
+                <Divider
+                  variant="fullWidth"
+                  sx={{ borderColor: "#578E7E77" }}
+                />
+              </React.Fragment>
+            ))}
+          {alignment === "technologies" && (
+            <Typography variant="h6" paddingTop={"0.5em"}>
+              {tech}
+            </Typography>
+          )}{" "}
+          {alignment === "link" && (
+            <Box paddingTop={"0.5em"}>
+              <Typography
+                component={"a"}
+                href={link}
+                sx={{ fontSize: "1.5em", color: "#578E7E" }}
+              >
+                {headline.split(":")[1]}
+              </Typography>
+            </Box>
+          )}
+        </Box>
       </Box>
     </Box>
   );

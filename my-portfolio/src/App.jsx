@@ -5,9 +5,7 @@ import Home from "./components/Home";
 export default function App() {
   return (
     <CustomTheme>
-      <div class="container">
-        <Home />
-      </div>
+      <Home />
     </CustomTheme>
   );
 }

@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
-import React from "react";
-
-import WaveBtn from "./WaveBtn";
+import React, { lazy } from "react";
+const ContactBtn = lazy(() => import("./ContactBtn"));
 
 export default function BottomNav() {
   return (
@@ -23,7 +22,7 @@ export default function BottomNav() {
       component="nav"
       id="bottomNav"
     >
-      <WaveBtn />
+      <ContactBtn />
     </Box>
   );
 }

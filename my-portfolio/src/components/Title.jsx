@@ -1,9 +1,24 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { motion } from "motion/react";
 
-export default function Title({ loading }) {
+export default function Title() {
   return (
-    <Box display={"flex"}>
+    <motion.div
+      display={"flex"}
+      key="title"
+      initial={{ opacity: 0, scaleX: 0.8 }}
+      animate={{
+        opacity: 1,
+        scaleX: 1,
+        transition: { delay: 0.8, duration: 0.5 },
+      }}
+      exit={{
+        opacity: 0,
+        x: 100,
+        transition: { delay: 0.8, duration: 0.5 },
+      }}
+    >
       <div className="wrapper">
         <div class="bg"> Sorena </div>
         <div class="fg"> Sorena </div>
@@ -19,6 +34,6 @@ export default function Title({ loading }) {
       >
         Salehi
       </Typography>
-    </Box>
+    </motion.div>
   );
 }

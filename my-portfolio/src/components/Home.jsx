@@ -1,24 +1,24 @@
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { lazy } from "react";
 
 import Header from "./Header";
-import ScrollBtn from "./ScrollBtn";
+import AboutMe from "./AboutMe";
 
 const ScrollTriggered = lazy(() => import("./ScrollTriggered"));
 const Nav = lazy(() => import("./Nav"));
 const BottomNav = lazy(() => import("./BottomNav"));
 
 export default function Home() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
   return (
-    <Box position={"relative"}>
+    <Box>
       <Nav />
 
       <Header />
-      <ScrollTriggered />
-      {isMobile && <ScrollBtn />}
+
+      <AboutMe />
+      <Box component={"div"} className="cards-container">
+        <ScrollTriggered />
+      </Box>
       <BottomNav />
     </Box>
   );

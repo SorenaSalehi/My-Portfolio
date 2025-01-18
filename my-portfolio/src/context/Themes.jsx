@@ -20,11 +20,13 @@ const darkTheme = createTheme({
     background: {
       default: "#578E7E",
       paperFade: "#578E7E77",
+      dark: "#123524",
     },
     text: {
       primary: "#FED8B1",
       secondary: "#ECB176",
     },
+    
   },
 });
 

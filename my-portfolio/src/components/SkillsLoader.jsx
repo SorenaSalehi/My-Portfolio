@@ -1,23 +1,34 @@
 import { Box, styled } from "@mui/material";
 import React from "react";
+import { motion } from "motion/react";
 
 export default function SkillsLoader() {
   return (
-    /* From Uiverse.io by kennyotsu */
-    <Box sx={{ margin: "0 0 0 10%" }}>
-      <div className="card">
-        <div className="loader">
-          <p>Skills Summary:</p>
-          <div class="words">
-            <span class="word">HTML5</span>
-            <span class="word">CSS3</span>
-            <span class="word">JS</span>
-            <span class="word">React.js</span>
-            <span class="word">MUI</span>
-            <span class="word">Tailwind css</span>
-          </div>
+    <motion.div
+      margin={"0 0 0 5%"}
+      key="title"
+      initial={{ opacity: 0, scaleX: 0.8 }}
+      animate={{
+        opacity: 1,
+        scaleX: 1,
+        transition: { delay: 1, duration: 0.5 },
+      }}
+      exit={{
+        opacity: 0,
+        scaleX: 0.8,
+        transition: { delay: 1.2, duration: 0.5 },
+      }}
+    >
+      <div class="loader">
+        <p>Skills Summary:</p>
+        <div class="words">
+          <span class="word">JS</span>
+          <span class="word">React</span>
+          <span class="word">MUI</span>
+          <span class="word">Tailwind</span>
+          <span class="word">JS</span>
         </div>
       </div>
-    </Box>
+    </motion.div>
   );
 }
