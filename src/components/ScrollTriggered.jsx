@@ -5,7 +5,7 @@ const data = [
   {
     src: "/5.webp",
 
-    headline: "Fifth: DuckPump Telegram min app",
+    headline: "5 : DuckPump Telegram min app",
     paragraph: [
       { sec: "This Telegram mini-app aims to simplify the Web3 for everyone." },
       { sec: " Key features include:Telegram authentication" },
@@ -36,7 +36,7 @@ const data = [
   },
   {
     src: "/4.webp",
-    headline: "Fourth: Ton Portal Telegram mini app ",
+    headline: "4 : Ton Portal Telegram mini app ",
     paragraph: [
       { sec: "This was my first real and team project." },
 
@@ -62,7 +62,7 @@ const data = [
   {
     src: "/3.webp",
 
-    headline: "Third: React Quiz",
+    headline: "3 : React Quiz",
     paragraph: [
       { sec: "This platform is designed to enhance learning through" },
       { sec: "a fun and interactive quiz experience." },
@@ -81,7 +81,7 @@ const data = [
   },
   {
     src: "/2.webp",
-    headline: "Seconde: ToDo Webapp",
+    headline: "2 : ToDo Webapp",
     paragraph: [
       { sec: "this one incorporates several new techniques I've learned" },
       { sec: "such as Vite, React-Router-Dom, useReducer, and useContext." },
@@ -96,7 +96,7 @@ const data = [
   },
   {
     src: "/1.webp",
-    headline: "first: Whether Webapp",
+    headline: "1 : Whether Webapp",
     paragraph: [
       { sec: "This Was the first project and its was implemented for" },
       { sec: "the practice of (useState and useEffect)." },
@@ -117,7 +117,12 @@ export default function ScrollTriggered() {
       }}
     >
       {data.map((item, i) => (
-        <Box key={i} component={"div"} className="card-container">
+        <Box
+          key={i}
+          component={"div"}
+          className="card-container"
+          bgcolor={"Background.default"}
+        >
           <Card
             i={i}
             img={item.src}

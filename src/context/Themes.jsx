@@ -3,11 +3,20 @@ import { createTheme } from "@mui/material/styles";
 const lightTheme = createTheme({
   palette: {
     mode: "light",
-    primary: { main: "#FFFAEC" },
-    secondary: { main: "#F5ECD5" },
+    primary: { main: "#0D8057" },
+    secondary: { main: "#D46A1B" },
+    background: {
+      default: "#8bc5d5",
+      paperFade: "#DFF0E7",
+      secondary: "#EAEDED",
+      header: "#bce4ef",
+      aboutMe: "#bce4ef",
+      card1: "#FFE620",
+      card2: "#37D8E1",
+    },
     text: {
-      primary: "#578E7E",
-      secondary: "#3D3D3D",
+      primary: "#0f1211",
+      secondary: "#4B4F47",
     },
   },
 });
@@ -15,18 +24,22 @@ const lightTheme = createTheme({
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
-    primary: { main: "#6F4E37" },
-    secondary: { main: "#A67B5B" },
+    primary: { main: "#16C47F" },
+    secondary: { main: "#FF9D23" },
     background: {
-      default: "#578E7E",
+      default: "#0a120e",
       paperFade: "#578E7E77",
-      dark: "#123524",
+      secondary: "#3C3D37",
+      header: "#111111",
+      aboutMe: "#0a120e",
+
+      card1: "#FFE31A",
+      card2: "#00ADB5",
     },
     text: {
-      primary: "#FED8B1",
-      secondary: "#ECB176",
+      primary: "#FFFAEC",
+      secondary: "#F5ECD5",
     },
-    
   },
 });
 

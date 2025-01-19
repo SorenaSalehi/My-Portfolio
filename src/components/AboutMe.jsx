@@ -1,8 +1,6 @@
 import { Box, Divider, Typography } from "@mui/material";
 import React from "react";
-import { useInView } from "react-intersection-observer";
 import { motion } from "motion/react";
-import { red } from "@mui/material/colors";
 
 const about = [
   { sec: "In December 2023, I finally found my path." },
@@ -23,22 +21,28 @@ const about = [
 
 export default function AboutMe() {
   return (
-    <Box component={"div"} bgcolor={"background.dark"} paddingBottom={"1rem"}>
+    <Box
+      component={"div"}
+      bgcolor={"background.aboutMe"}
+      padding={"1rem"}
+      overflow={"hidden"}
+    >
       {about.map((item, i) => (
         <React.Fragment key={i}>
           <motion.p
-            initial={{ opacity: 0, x: 50, y: 100 }}
+            initial={{ opacity: 0, x: -50, y: 100 }}
             whileInView={{
               opacity: 1,
               x: 0,
               y: 0,
+
               transition: { delay: i + 1, duration: 0.8 },
             }}
             viewport={{ once: true }}
           >
             <Typography
               sx={{
-                fontSize: "2.3vw",
+                fontSize: "3vw",
                 padding: "0.8rem 0.2rem",
                 textAlign: "center",
               }}

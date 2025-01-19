@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
-import React, { lazy } from "react";
-const ContactBtn = lazy(() => import("./ContactBtn"));
+import React from "react";
+
+import ContactBtn from "./ContactBtn";
+import DarkModeBtn from "./DarkModeBtn";
 
 export default function BottomNav() {
   return (
@@ -12,16 +14,18 @@ export default function BottomNav() {
         height: "60px",
         display: "flex",
         alignItems: "center",
-        justifyContent: "flex-end",
+        justifyContent: "space-between",
         backgroundColor: "Background.paperFade",
         backdropFilter: "blur(8px)",
-        zIndex: 10,
+        zIndex: 100,
         backgroundImage: `radial-gradient(circle, ${"#578E7E99"} 0.1rem, transparent 0.1rem)`,
         backgroundSize: "8px 8px",
+        paddingLeft: 1,
       }}
       component="nav"
       id="bottomNav"
     >
+      <DarkModeBtn />
       <ContactBtn />
     </Box>
   );

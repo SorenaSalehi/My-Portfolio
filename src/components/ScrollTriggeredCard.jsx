@@ -85,7 +85,7 @@ export default function Card({
   const [alignment, setAlignment] = useState("description");
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const background = "#4B5945";
+  const background = i % 2 === 0 ? "#FFE31A" : "#00ADB5";
 
   return (
     <Box
@@ -133,7 +133,7 @@ export default function Card({
 
       <Box
         component={"div"}
-        className="card-paragraph"
+        bgcolor={"background.secondary"}
         borderRadius={"0.8rem"}
         overflow={"hidden"}
         sx={{
@@ -149,11 +149,11 @@ export default function Card({
           alignItems={"center"}
         >
           <Typography
-            variant="h5"
-            color={"background.default"}
+            variant="h4"
             textAlign={"center"}
             my={"1rem"}
             px={"1rem"}
+            fontFamily={"'Jersey 15', serif"}
           >
             {headline}
           </Typography>

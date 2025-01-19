@@ -11,7 +11,8 @@ export default function Fallback() {
       display={"flex"}
       justifyContent={"center"}
       alignItems={"center"}
-      color={"#FED8B1"}
+      bgcolor={"#0a120e"}
+      color={"#FFE31A"}
     >
       <Typography variant="h2" fontFamily={"'Jersey 15', serif"}>
         JS

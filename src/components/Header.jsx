@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import { motion } from "motion/react";
 
@@ -15,6 +15,7 @@ export default function Header() {
     <Box
       component={"div"}
       className="container"
+      bgcolor={"background.header"}
       ref={ref}
       display={"flex"}
       flexDirection={"column"}
@@ -66,6 +67,16 @@ export default function Header() {
           </>
         )}
       </AnimatePresence>
+      <Typography
+        position={"absolute"}
+        bottom={0}
+        borderBottom={1}
+        letterSpacing={2}
+        fontFamily={"'Jersey 15', serif"}
+        variant="h4"
+      >
+        Where Did it Start?
+      </Typography>
     </Box>
   );
 }

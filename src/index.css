@@ -32,9 +32,6 @@
 
 /* /**header bg  */
 .container {
-  /* width: 100%; */
-  /* height: 100vh; */
-  background-color: #111111;
   background-image: linear-gradient(
     32deg,
     rgba(8, 8, 8, 0.74) 30px,
@@ -46,7 +43,6 @@
 
 /* //*card-container */
 .cards-container {
-  background-color: #123524;
   background-image: linear-gradient(
     32deg,
     rgba(8, 8, 8, 0.74) 30px,
@@ -56,13 +52,7 @@
   background-position: -5px -5px;
 }
 
-/* //*card-paragraph */
-.card-paragraph {
-  background: #3d3d3d;
-}
-
 /*//* title  */
-
 .wrapper {
   display: grid;
   grid-template-areas: "overlap";
@@ -107,7 +97,6 @@ div.fg {
 /* From Uiverse.io by kennyotsu */
 
 .loader {
-  color: rgb(124, 124, 124);
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 25px;
@@ -119,6 +108,9 @@ div.fg {
   display: -ms-flexbox;
   display: flex;
   border-radius: 8px;
+}
+.loader p {
+  font-family: "Jersey 15", serif;
 }
 
 .words {
@@ -323,4 +315,123 @@ div.fg {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+/* //*dark mode btn  */
+/* From Uiverse.io by r7chardgh */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 2.5em;
+  user-select: none;
+  background-color: #1e2127;
+}
+
+/* Hide default HTML checkbox */
+.switch .cb {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.1em;
+  transition: 0.4s;
+  text-transform: uppercase;
+  font-weight: 700;
+  overflow: hidden;
+  box-shadow: -0.3em 0 0 0 #384a43, -0.3em 0.3em 0 0 #384a43,
+    0.3em 0 0 0 #384a43, 0.3em 0.3em 0 0 #384a43, 0 0.3em 0 0 #384a43;
+}
+
+.toggle > .left {
+  position: absolute;
+  display: flex;
+  width: 50%;
+  height: 88%;
+  color: #f3f3f3;
+  background-color: #1e2127;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  transform-origin: right;
+  transform: rotateX(10deg);
+  transform-style: preserve-3d;
+  transition: all 150ms;
+}
+
+.left::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(206, 206, 206);
+  transform-origin: center left;
+  transform: rotateY(90deg);
+}
+
+.left::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(112, 112, 112);
+  transform-origin: center bottom;
+  transform: rotateX(90deg);
+}
+
+.toggle > .right {
+  position: absolute;
+  display: flex;
+  width: 50%;
+  height: 88%;
+  background-color: #f3f3f3;
+  color: #16c47f;
+  right: 1px;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  transform-origin: left;
+  transform: rotateX(10deg) rotateY(-45deg);
+  transform-style: preserve-3d;
+  transition: all 150ms;
+}
+
+.right::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(206, 206, 206);
+  transform-origin: center right;
+  transform: rotateY(-90deg);
+}
+
+.right::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(112, 112, 112);
+  transform-origin: center bottom;
+  transform: rotateX(90deg);
+}
+
+.switch input:checked + .toggle > .left {
+  transform: rotateX(10deg) rotateY(45deg);
+  color: rgb(206, 206, 206);
+}
+
+.switch input:checked + .toggle > .right {
+  transform: rotateX(10deg) rotateY(0deg);
+  color: #16c47f;
 }

@@ -25,12 +25,12 @@ export default function Title() {
       </div>
       <Typography
         textAlign={"right"}
-        color="text.secondary"
         letterSpacing={2}
         fontWeight={700}
-        variant="h6"
+        variant="h4"
         alignSelf={"end"}
         marginLeft={1}
+        fontFamily={"'Jersey 15', serif"}
       >
         Salehi
       </Typography>
