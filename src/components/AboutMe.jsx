@@ -24,8 +24,9 @@ export default function AboutMe() {
     <Box
       component={"div"}
       bgcolor={"background.aboutMe"}
-      padding={"1rem"}
+      padding={"1rem 1rem 3rem 1rem"}
       overflow={"hidden"}
+      height={"max-content"}
     >
       {about.map((item, i) => (
         <React.Fragment key={i}>
@@ -62,7 +63,12 @@ export default function AboutMe() {
           >
             <Divider
               variant="middle"
-              sx={{ borderColor: "background.paperFade" }}
+              sx={{
+                borderColor:
+                  i < about.length - 1
+                    ? "background.paperFade"
+                    : "primary.main",
+              }}
             />
           </motion.div>
         </React.Fragment>

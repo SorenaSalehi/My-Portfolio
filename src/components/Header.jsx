@@ -6,6 +6,7 @@ import Title from "./Title";
 import SkillsLoader from "./SkillsLoader";
 import { useInView } from "react-intersection-observer";
 import { AnimatePresence } from "motion/react";
+import SkillsList from "./SkillsList";
 
 export default function Header() {
   const { ref, inView } = useInView({
@@ -67,10 +68,14 @@ export default function Header() {
           </>
         )}
       </AnimatePresence>
+
+      <SkillsList />
+
       <Typography
         position={"absolute"}
         bottom={0}
         borderBottom={1}
+        borderColor={"primary.main"}
         letterSpacing={2}
         fontFamily={"'Jersey 15', serif"}
         variant="h4"

@@ -3,30 +3,13 @@ import React, { useState } from "react";
 
 import {
   Box,
-  Button,
   Divider,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import ToggleBtn from "./ToggleBtn";
-import { link } from "motion/react-client";
 import { red } from "@mui/material/colors";
-
-const cardVariants = {
-  offscreen: {
-    y: 300,
-  },
-  onscreen: {
-    y: 50,
-    rotate: -10,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
-};
 
 const cardContainer = {
   overflow: "hidden",
@@ -50,14 +33,14 @@ const notCardContainer = {
   margin: "2rem 0",
 };
 
-const splash = {
-  position: "absolute",
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
-};
+// const splash = {
+//   position: "absolute",
+//   top: 0,
+//   left: 0,
+//   right: 0,
+//   bottom: 0,
+//   clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
+// };
 
 // Updated image styling to maintain aspect ratio
 const mobileCard = {
@@ -72,20 +55,25 @@ const mobileCard = {
   transformOrigin: "-55% 60%",
 };
 
-export default function Card({
-  i,
-  img,
-  headline,
-  paragraph,
-  tech,
-  link,
-  on,
-  attention,
-}) {
+export default function Card({ i, img, headline, paragraph, tech, link, on }) {
   const [alignment, setAlignment] = useState("description");
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const background = i % 2 === 0 ? "#FFE31A" : "#00ADB5";
+  const cardVariants = {
+    offscreen: {
+      y: 300,
+    },
+    onscreen: {
+      y: 50,
+      rotate: i % 2 === 0 ? -13 : 0,
+      transition: {
+        type: "spring",
+        bounce: i % 2 === 0 ? 0.6 : 0.4,
+        duration: 0.8,
+      },
+    },
+  };
+  // const background = i % 2 === 0 ? "#FFE31A" : "#00ADB5";
 
   return (
     <Box
@@ -110,7 +98,7 @@ export default function Card({
         whileInView="onscreen"
         viewport={{ amount: 0.8 }}
       >
-        <div style={{ ...splash, background }} />
+        {/* <div style={{ ...splash, background }} /> */}
         <Box
           sx={{
             width: "100%",
@@ -161,11 +149,6 @@ export default function Card({
           <Typography variant="caption" justifySelf={"start"}>
             Start on: {on}
           </Typography>
-          {attention && (
-            <Typography variant="caption" justifySelf={"end"} color={red[300]}>
-              Attention: {attention}
-            </Typography>
-          )}
         </Box>
 
         {/* //*toggle btn */}

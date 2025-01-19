@@ -1,11 +1,11 @@
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import Card from "./ScrollTriggeredCard";
 
 const data = [
   {
     src: "/5.webp",
 
-    headline: "5 : DuckPump Telegram min app",
+    headline: "5 : DuckPump Telegram mini app",
     paragraph: [
       { sec: "This Telegram mini-app aims to simplify the Web3 for everyone." },
       { sec: " Key features include:Telegram authentication" },
@@ -28,8 +28,6 @@ const data = [
       { sec: "backend, and smart contracts." },
       { sec: "(on the Jan 18, 2025)" },
     ],
-
-    attention: "This is Telegram mini app and is not responsive",
     tech: "React.js, React Router, Vite, Material UI, Context API, OKXTonConnect, Motion React, and more!",
     on: "Jan 2, 2025",
     link: "https://t.me/duckpumpbot",
@@ -53,7 +51,6 @@ const data = [
         sec: "note: since we only had 7 days, I couldn't focus much on styling.",
       },
     ],
-    attention: "This is Telegram mini app and is not responsive",
     tech: "React.js, React Router , React Query, Redux, Tailwind CSS, motion Ui,React Toastify, Lazy Loading, reusable components, custom hooks, modern file structure, UI design, AI integration.",
     on: "Nov 14, 2024",
     link: "https://t.me/tonportalprobot",
@@ -117,23 +114,27 @@ export default function ScrollTriggered() {
       }}
     >
       {data.map((item, i) => (
-        <Box
-          key={i}
-          component={"div"}
-          className="card-container"
-          bgcolor={"Background.default"}
-        >
-          <Card
-            i={i}
-            img={item.src}
-            headline={item.headline}
-            paragraph={item.paragraph}
-            tech={item.tech}
-            on={item.on}
-            link={item.link}
-            attention={item.attention}
-          />
-        </Box>
+        <>
+          <Box
+            key={i}
+            component={"div"}
+            className="card-container"
+            bgcolor={"Background.secondary"}
+          >
+            <Card
+              i={i}
+              img={item.src}
+              headline={item.headline}
+              paragraph={item.paragraph}
+              tech={item.tech}
+              on={item.on}
+              link={item.link}
+            />
+          </Box>
+          {i < data.length - 1 && (
+            <Divider variant="middle" sx={{ borderColor: "primary.main" }} />
+          )}
+        </>
       ))}
     </Box>
   );
