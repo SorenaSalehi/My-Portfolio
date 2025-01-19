@@ -18,6 +18,7 @@ export default function SkillsLoader() {
         scaleX: 0.8,
         transition: { delay: 1.2, duration: 0.5 },
       }}
+      viewport={{ once: true }}
     >
       <div class="loader">
         <p>Skills Summary:</p>

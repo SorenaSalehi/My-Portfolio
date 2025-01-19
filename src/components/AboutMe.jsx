@@ -1,5 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 const about = [
@@ -24,20 +24,19 @@ export default function AboutMe() {
     <Box
       component={"div"}
       bgcolor={"background.aboutMe"}
-      padding={"1rem 1rem 3rem 1rem"}
-      overflow={"hidden"}
+      padding={"1rem 1rem 5rem 1rem"}
       height={"max-content"}
     >
       {about.map((item, i) => (
         <React.Fragment key={i}>
           <motion.p
-            initial={{ opacity: 0, x: -50, y: 100 }}
+            initial={{ opacity: 0, x: -50, y: 50 }}
             whileInView={{
               opacity: 1,
               x: 0,
               y: 0,
 
-              transition: { delay: i + 1, duration: 0.8 },
+              transition: { delay: i * 1, duration: 0.8 },
             }}
             viewport={{ once: true }}
           >
@@ -68,6 +67,7 @@ export default function AboutMe() {
                   i < about.length - 1
                     ? "background.paperFade"
                     : "primary.main",
+                // marginBottom: i === about.length - 1 ? "2rem" : "0",
               }}
             />
           </motion.div>

@@ -18,6 +18,7 @@ export default function Title() {
         x: 100,
         transition: { delay: 0.8, duration: 0.5 },
       }}
+      viewport={{ once: true }}
     >
       <div className="wrapper">
         <div class="bg"> Sorena </div>

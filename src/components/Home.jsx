@@ -10,7 +10,7 @@ const BottomNav = lazy(() => import("./BottomNav"));
 
 export default function Home() {
   return (
-    <Box position={"relative"}>
+    <Box position={"relative"} height={"100vh"} overflow={"scroll"}>
       <Nav />
 
       <Header />
