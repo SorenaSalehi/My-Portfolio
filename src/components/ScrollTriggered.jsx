@@ -109,7 +109,7 @@ export default function ScrollTriggered() {
     <Box
       sx={{
         margin: "0 auto ",
-        maxWidth: { xs: 500, md: 1200 },
+        maxWidth: { xs: 500, md: 1600 },
         paddingBottom: 10,
       }}
     >

@@ -9,14 +9,16 @@ const lightTheme = createTheme({
       default: "#8bc5d5",
       paperFade: "#DFF0E7",
       secondary: "#EAEDED",
-      header: "#bce4ef",
+      secondaryFade: "#EAEDED77",
+      header: "#c4d8de",
+      headerFade: "rgba(253, 253, 253, 0.74)",
       aboutMe: "#bce4ef",
       card1: "#FFE620",
       card2: "#37D8E1",
     },
     text: {
       primary: "#0f1211",
-      secondary: "#4B4F47",
+      secondary: "#085037",
     },
   },
 });
@@ -30,10 +32,13 @@ const darkTheme = createTheme({
       default: "#0a120e",
       paperFade: "#578E7E77",
       secondary: "#3C3D37",
+      secondaryFade: "#3C3D3766",
       header: "#111111",
+      headerFade: "rgba(8, 8, 8, 0.74)",
+
       aboutMe: "#0a120e",
 
-      card1: "#FFE31A",
+      card1: "#FFE620",
       card2: "#00ADB5",
     },
     text: {

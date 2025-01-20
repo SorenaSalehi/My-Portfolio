@@ -1,6 +1,6 @@
-import React from "react";
+import React, { lazy } from "react";
 import { CustomTheme } from "./context/CustomThemeProvider";
-import Home from "./components/Home";
+const Home = lazy(() => import("./components/Home"));
 
 export default function App() {
   return (

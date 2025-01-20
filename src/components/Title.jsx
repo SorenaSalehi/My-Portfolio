@@ -1,8 +1,10 @@
 import { Typography } from "@mui/material";
 import React from "react";
 import { motion } from "motion/react";
+import { useCustomTheme } from "../context/CustomThemeProvider";
 
 export default function Title() {
+  const { mode } = useCustomTheme();
   return (
     <motion.div
       display={"flex"}
@@ -28,10 +30,10 @@ export default function Title() {
         textAlign={"right"}
         letterSpacing={2}
         fontWeight={700}
-        variant="h4"
+        variant={mode ? "h4" : "h5"}
         alignSelf={"end"}
         marginLeft={1}
-        fontFamily={"'Jersey 15', serif"}
+        fontFamily={mode && "'Jersey 15', serif"}
       >
         Salehi
       </Typography>

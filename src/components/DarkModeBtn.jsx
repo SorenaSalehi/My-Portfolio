@@ -1,13 +1,15 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
-import { useTheme } from "../context/CustomThemeProvider";
+import { useCustomTheme } from "../context/CustomThemeProvider";
 
 export default function DarkModeBtn() {
-  const { handleChange } = useTheme();
+  const { handleChange } = useCustomTheme();
+  const Theme = useTheme();
+  const isMobile = useMediaQuery(Theme.breakpoints.down("md"));
 
   return (
     <Box>
-      <label class="switch">
+      <label class="switch" style={{ fontSize: isMobile ? "2vw" : "1vw" }}>
         <input class="cb" type="checkbox" />
         <Box
           bgcolor={"background.paperFade"}

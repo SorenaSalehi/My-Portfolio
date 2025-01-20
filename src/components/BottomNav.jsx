@@ -11,7 +11,7 @@ export default function BottomNav() {
         position: "fixed",
         bottom: 0,
         width: "100%",
-        height: "4.5em",
+        height: "3.5em",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",

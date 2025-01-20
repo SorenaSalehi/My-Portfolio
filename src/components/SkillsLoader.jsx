@@ -1,8 +1,11 @@
 import { Box, styled } from "@mui/material";
 import React from "react";
 import { motion } from "motion/react";
+import { useCustomTheme } from "../context/CustomThemeProvider";
 
 export default function SkillsLoader() {
+  const { mode, theme } = useCustomTheme();
+
   return (
     <motion.div
       margin={"0 0 0 5%"}
@@ -19,6 +22,10 @@ export default function SkillsLoader() {
         transition: { delay: 1.2, duration: 0.5 },
       }}
       viewport={{ once: true }}
+      style={{
+        backgroundColor: !mode && theme.palette.text.secondary,
+        borderRadius: "1rem",
+      }}
     >
       <div class="loader">
         <p>Skills Summary:</p>

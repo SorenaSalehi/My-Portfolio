@@ -8,7 +8,7 @@ export default function Nav() {
         position: "fixed",
         top: 0,
         width: "100%",
-        height: "60px",
+        height: "2rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

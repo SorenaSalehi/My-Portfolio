@@ -1,5 +1,8 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
+import { motion } from "motion/react";
+
+import { useCustomTheme } from "../context/CustomThemeProvider";
 
 const skills = [
   { sk: "HTML5", bg: "#F16A30" },
@@ -18,15 +21,24 @@ const skills = [
 ];
 
 export default function SkillsList() {
+  const { mode, theme } = useCustomTheme();
+
   return (
     <Box
       display={"flex"}
-      gap={1}
+      gap={2}
       flexWrap={"wrap"}
       justifyContent={"center"}
       marginBottom={3}
+      px={2}
+      sx={{
+        backgroundColor: !mode && theme.palette.text.secondary,
+        borderRadius: "1rem",
+        py: !mode && "1rem",
+        mx: !mode && "1rem",
+      }}
     >
-      {skills.map((item) => (
+      {skills.map((item, i) => (
         <>
           <svg style={{ position: "absolute", width: 0, height: 0 }}>
             <filter
@@ -46,13 +58,23 @@ export default function SkillsList() {
           </svg>
 
           <div class="skill-backdrop"></div>
-          <Box component={"div"} className="skill-button" bgcolor={item.bg}>
+          <motion.div
+            className="skill-button"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              backgroundColor: item.bg,
+              transition: { delay: i * 0.5, duration: 0.5 },
+            }}
+          >
             <div class="a l"></div>
             <div class="a r"></div>
             <div class="a t"></div>
             <div class="a b"></div>
-            <div class="skill-text">{item.sk}</div>
-          </Box>
+            <div class="skill-text" style={{ fontSize: "2vw" }}>
+              {item.sk}
+            </div>
+          </motion.div>
         </>
       ))}
     </Box>

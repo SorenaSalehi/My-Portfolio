@@ -9,40 +9,7 @@ import {
   useTheme,
 } from "@mui/material";
 import ToggleBtn from "./ToggleBtn";
-import { red } from "@mui/material/colors";
 
-const cardContainer = {
-  overflow: "hidden",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  position: "relative",
-  paddingTop: 20,
-  width: "100%",
-};
-
-const notCardContainer = {
-  overflow: "hidden",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  position: "relative",
-  paddingTop: 10,
-  width: "100%",
-  maxWidth: "600px",
-  margin: "2rem 0",
-};
-
-// const splash = {
-//   position: "absolute",
-//   top: 0,
-//   left: 0,
-//   right: 0,
-//   bottom: 0,
-//   clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
-// };
-
-// Updated image styling to maintain aspect ratio
 const mobileCard = {
   fontSize: 164,
   width: 200,
@@ -51,29 +18,27 @@ const mobileCard = {
   justifyContent: "center",
   alignItems: "center",
   borderRadius: 20,
-
   transformOrigin: "-55% 60%",
 };
 
 export default function Card({ i, img, headline, paragraph, tech, link, on }) {
   const [alignment, setAlignment] = useState("description");
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const cardVariants = {
     offscreen: {
       y: 300,
     },
     onscreen: {
-      y: 50,
+      y: i % 2 === 0 ? 50 : 10,
       rotate: i % 2 === 0 ? -13 : 0,
       transition: {
         type: "spring",
-        bounce: i % 2 === 0 ? 0.6 : 0.4,
+        bounce: i % 2 === 0 ? 0.5 : 0.4,
         duration: 0.8,
       },
     },
   };
-  // const background = i % 2 === 0 ? "#FFE31A" : "#00ADB5";
 
   return (
     <Box
@@ -86,19 +51,41 @@ export default function Card({ i, img, headline, paragraph, tech, link, on }) {
         },
         justifyContent: { md: "space-between" },
         alignItems: "center",
-        gap: { md: "1rem" },
-        px: { md: "4rem" },
+        gap: isMobile ? 0 : "1rem",
+        px: { md: "2rem" },
       }}
       component={"li"}
     >
       <motion.div
         className={`card-container-${i}`}
-        style={isMobile ? cardContainer : notCardContainer}
+        style={{
+          overflow: "hidden",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          paddingTop: 20,
+          width: "100%",
+          maxWidth: { md: "600px" },
+        }}
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ amount: 0.8 }}
       >
-        {/* <div style={{ ...splash, background }} /> */}
+        <Box
+          sx={{
+            position: "absolute",
+            // top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: "50%",
+            borderRadius: isMobile ? "10rem 1rem 0 0" : "5rem 1rem 1rem 1rem",
+            backgroundColor: "background.secondaryFade",
+            boxShadow:
+              "15px 15px 30px rgb(12, 69, 16,0.1),-1px -1px 20px rgb(4, 65, 14,0.5)",
+          }}
+        />
         <Box
           sx={{
             width: "100%",
@@ -122,10 +109,11 @@ export default function Card({ i, img, headline, paragraph, tech, link, on }) {
       <Box
         component={"div"}
         bgcolor={"background.secondary"}
-        borderRadius={"0.8rem"}
+        borderRadius={isMobile ? 0 : "0.8rem"}
         overflow={"hidden"}
+        position={"relative"}
         sx={{
-          width: { xs: "100%", md: "50%" },
+          width: { xs: "100%", md: "150%" },
           maxWidth: { md: "600px" },
           height: "auto",
         }}
