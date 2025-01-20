@@ -21,8 +21,23 @@
   --light-shadow: #77571d;
   --dark-shadow: #3e2904;
 }
+#root {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 li {
   list-style: none;
+}
+p {
+  padding: 0;
+  margin: 0;
 }
 
 /* //*card-container */
@@ -83,19 +98,21 @@ div.fg {
 .loader {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 25px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-  height: 40px;
-  padding: 10px 10px;
+  height: 6vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 8px;
   border-radius: 8px;
+  margin-left: 1vw;
 }
 .loader p {
   font-family: "Jersey 15", serif;
   color: #fffaec;
+  text-wrap: nowrap;
 }
 
 .words {
@@ -118,7 +135,6 @@ div.fg {
 .word {
   display: block;
   height: 100%;
-  padding-left: 6px;
   color: #956afa;
   animation: spin_4991 5s infinite;
 }
@@ -315,7 +331,6 @@ div.fg {
 /* From Uiverse.io by njesenberger */
 .button {
   width: 100%;
-
   -webkit-appearance: none;
   appearance: none;
   position: relative;
@@ -417,119 +432,92 @@ div.fg {
 }
 
 /* //*dark mode btn  */
-/* From Uiverse.io by r7chardgh */
-/* The switch - the box around the slider */
-.switch {
+
+.toggle-switch {
   position: relative;
   display: inline-block;
-  width: 5em;
-  height: 2.5em;
-  user-select: none;
-  background-color: #1e2127;
+  width: clamp(1rem, 8vw, 3.8rem);
+  max-width: 68px;
+  min-width: 40px;
+  height: clamp(1rem, 4vh, 2.8rem);
+  font-size: clamp(0.5rem, 2.2vw, 1rem);
+  border-radius: 3em;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-/* Hide default HTML checkbox */
-.switch .cb {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.toggle-switch input[type="checkbox"] {
+  display: none;
 }
 
-/* The slider */
-.toggle {
+.toggle-switch label {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slider {
   position: absolute;
   cursor: pointer;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.1em;
-  transition: 0.4s;
-  text-transform: uppercase;
-  font-weight: 700;
-  overflow: hidden;
-  box-shadow: -0.3em 0 0 0 #384a43, -0.3em 0.3em 0 0 #384a43,
-    0.3em 0 0 0 #384a43, 0.3em 0.3em 0 0 #384a43, 0 0.3em 0 0 #384a43;
-}
-
-.toggle > .left {
-  position: absolute;
-  display: flex;
-  width: 50%;
-  height: 88%;
-  color: #f3f3f3;
-  background-color: #1e2127;
+  top: 0;
   left: 0;
+  right: 0;
   bottom: 0;
-  align-items: center;
-  justify-content: center;
-  transform-origin: right;
-  transform: rotateX(10deg);
-  transform-style: preserve-3d;
-  transition: all 150ms;
+  background-color: #0a120e;
+  border-radius: 3em;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.left::before {
+.slider::before {
   position: absolute;
   content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(206, 206, 206);
-  transform-origin: center left;
-  transform: rotateY(90deg);
+  width: 1.2em;
+  min-width: 13px;
+  height: 1.4em;
+  max-height: 17px;
+  min-height: 16px;
+  left: 0.5em;
+  bottom: clamp(0.2rem, 0.8vh, 1rem);
+  background-color: #38b8a7;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    background-color 0.3s ease;
+  transform: perspective(800px) rotateY(0deg) rotateX(0deg);
 }
 
-.left::after {
+.slider::after {
   position: absolute;
   content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(112, 112, 112);
-  transform-origin: center bottom;
-  transform: rotateX(90deg);
+  width: 0.8em;
+  height: 0.8em;
+  left: 50%;
+  bottom: 0.5em;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, 50%) scale(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
 }
 
-.toggle > .right {
-  position: absolute;
-  display: flex;
-  width: 50%;
-  height: 88%;
-  background-color: #f3f3f3;
-  color: #16c47f;
-  right: 1px;
-  bottom: 0;
-  align-items: center;
-  justify-content: center;
-  transform-origin: left;
-  transform: rotateX(10deg) rotateY(-45deg);
-  transform-style: preserve-3d;
-  transition: all 150ms;
+.toggle-switch input[type="checkbox"]:checked + .slider {
+  background-color: #64aef9;
+  box-shadow: 0 0.3em 0.3em rgba(244, 68, 68, 0.2);
 }
 
-.right::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(206, 206, 206);
-  transform-origin: center right;
-  transform: rotateY(-90deg);
+.toggle-switch input[type="checkbox"]:checked + .slider::before {
+  transform: translateX(clamp(1.2rem, 3vw, 2rem)) perspective(800px)
+    rotateY(180deg) rotateX(360deg);
+  background-color: rgb(255, 218, 68);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.right::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(112, 112, 112);
-  transform-origin: center bottom;
-  transform: rotateX(90deg);
-}
-
-.switch input:checked + .toggle > .left {
-  transform: rotateX(10deg) rotateY(45deg);
-  color: rgb(206, 206, 206);
-}
-
-.switch input:checked + .toggle > .right {
-  transform: rotateX(10deg) rotateY(0deg);
-  color: #16c47f;
+.toggle-switch input[type="checkbox"]:checked + .slider::after {
+  transform: translate(-50%, 50%) scale(1);
 }

@@ -6,6 +6,7 @@ import Title from "./Title";
 import SkillsLoader from "./SkillsLoader";
 import SkillsList from "./SkillsList";
 import { useCustomTheme } from "../context/CustomThemeProvider";
+import ContactOptions from "./ContactOptions";
 
 export default function Header() {
   const { theme } = useCustomTheme();
@@ -34,9 +35,10 @@ export default function Header() {
         sx={{
           display: "grid",
           gridTemplateColumns: isMobile ? "1" : "repeat(2,auto)",
-          gridTemplateRows: isMobile ? "repeat(3,auto)" : "repeat(2,auto)",
-          px: isMobile ? 0 : "10%",
+          gridTemplateRows: isMobile ? "repeat(3,auto)" : "repeat(1,auto)",
           justifyItems: "center",
+          alignItems: "center",
+          px: isMobile ? 0 : 8,
         }}
       >
         <Box

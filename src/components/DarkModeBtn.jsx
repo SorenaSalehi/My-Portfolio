@@ -4,23 +4,15 @@ import { useCustomTheme } from "../context/CustomThemeProvider";
 
 export default function DarkModeBtn() {
   const { handleChange } = useCustomTheme();
-  const Theme = useTheme();
-  const isMobile = useMediaQuery(Theme.breakpoints.down("md"));
 
   return (
-    <Box>
-      <label class="switch" style={{ fontSize: isMobile ? "2vw" : "1vw" }}>
-        <input class="cb" type="checkbox" />
-        <Box
-          bgcolor={"background.paperFade"}
-          component={"span"}
-          className="toggle"
-          onClick={() => handleChange("click")}
-          fontFamily={"'Jersey 15', serif"}
-        >
-          <span class="left">off</span>
-          <span class="right">on</span>
-        </Box>
+    <Box
+      onClick={handleChange}
+      sx={{ position: "fixed", bottom: "clamp(0.5rem,1vh,2rem)", left: "3vw" }}
+    >
+      <label class="toggle-switch" for="toggle-switch">
+        <input type="checkbox" id="toggle-switch" onClick={handleChange} />
+        <div class="slider"></div>
       </label>
     </Box>
   );

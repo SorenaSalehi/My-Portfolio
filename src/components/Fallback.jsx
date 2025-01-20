@@ -6,7 +6,6 @@ export default function Fallback() {
   return (
     <Box
       component={"div"}
-      className="container"
       height={"100vh"}
       display={"flex"}
       justifyContent={"center"}

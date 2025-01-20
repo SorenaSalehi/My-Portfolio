@@ -1,5 +1,6 @@
-import { Box, Divider } from "@mui/material";
+import { Box, Divider, useMediaQuery } from "@mui/material";
 import Card from "./ScrollTriggeredCard";
+import { useTheme } from "@emotion/react";
 
 const data = [
   {
@@ -105,6 +106,8 @@ const data = [
 ];
 
 export default function ScrollTriggered() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       sx={{
@@ -131,7 +134,7 @@ export default function ScrollTriggered() {
               link={item.link}
             />
           </Box>
-          {i < data.length - 1 && (
+          {i < data.length - 1 && !isMobile && (
             <Divider variant="middle" sx={{ borderColor: "primary.main" }} />
           )}
         </>

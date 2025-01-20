@@ -8,6 +8,9 @@ export function CustomTheme({ children }) {
   const [mode, setMode] = useState(
     window.matchMedia("(prefers-color-scheme:dark)").matches
   );
+  const [isContactOptionOpen, setIsContactOptionOpen] = useState(false);
+  const handleOpenContactOption = () => setIsContactOptionOpen(true);
+  const handleCloseContactOption = () => setIsContactOptionOpen(false);
 
   const theme = useMemo(() => (!mode ? lightTheme : darkTheme), [mode]);
   function handleChange() {
@@ -15,7 +18,17 @@ export function CustomTheme({ children }) {
   }
 
   return (
-    <Theme.Provider value={{ mode, theme, handleChange }}>
+    <Theme.Provider
+      value={{
+        mode,
+        theme,
+        handleChange,
+        isContactOptionOpen,
+        setIsContactOptionOpen,
+        handleOpenContactOption,
+        handleCloseContactOption,
+      }}
+    >
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}

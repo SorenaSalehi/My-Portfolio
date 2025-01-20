@@ -25,6 +25,7 @@ export default function SkillsLoader() {
       style={{
         backgroundColor: !mode && theme.palette.text.secondary,
         borderRadius: "1rem",
+        padding: "1rem 2rem",
       }}
     >
       <div class="loader">

@@ -3,6 +3,7 @@ import React from "react";
 
 import ContactBtn from "./ContactBtn";
 import DarkModeBtn from "./DarkModeBtn";
+import ContactOptions from "./ContactOptions";
 
 export default function BottomNav() {
   return (
@@ -26,7 +27,8 @@ export default function BottomNav() {
       id="bottomNav"
     >
       <DarkModeBtn />
-      <ContactBtn />
+      {/* <ContactBtn /> */}
+      <ContactOptions />
     </Box>
   );
 }
