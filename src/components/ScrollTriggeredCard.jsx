@@ -75,15 +75,15 @@ export default function Card({ i, img, headline, paragraph, tech, link, on }) {
         <Box
           sx={{
             position: "absolute",
-            // top: 0,
             left: 0,
             right: 0,
             bottom: 0,
             height: "50%",
-            borderRadius: isMobile ? "10rem 1rem 0 0" : "5rem 1rem 1rem 1rem",
+            borderRadius: isMobile
+              ? "10rem 1rem 0 0"
+              : "5rem 1rem 0.4rem 0.4rem",
             backgroundColor: "background.secondaryFade",
-            boxShadow:
-              "15px 15px 30px rgb(12, 69, 16,0.1),-1px -1px 20px rgb(4, 65, 14,0.5)",
+            boxShadow: "-25px -1px 20px 5px rgb(4, 65, 14,0.3)",
           }}
         />
         <Box

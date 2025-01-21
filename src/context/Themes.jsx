@@ -9,7 +9,8 @@ const lightTheme = createTheme({
       default: "#8bc5d5",
       paperFade: "#DFF0E7",
       secondary: "#EAEDED",
-      secondaryFade: "#EAEDED77",
+      secondaryFade: "#EAEDED44",
+      backdrop: "#EAEDEDaa",
       header: "#c4d8de",
       headerFade: "rgba(253, 253, 253, 0.74)",
       aboutMe: "#bce4ef",
@@ -33,6 +34,8 @@ const darkTheme = createTheme({
       paperFade: "#578E7E77",
       secondary: "#3C3D37",
       secondaryFade: "#3C3D3766",
+      backdrop: "#3C3D37aa",
+
       header: "#111111",
       headerFade: "rgba(8, 8, 8, 0.74)",
 

@@ -5,9 +5,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 const Theme = createContext();
 
 export function CustomTheme({ children }) {
-  const [mode, setMode] = useState(
-    window.matchMedia("(prefers-color-scheme:dark)").matches
-  );
+  const [mode, setMode] = useState(true);
   const [isContactOptionOpen, setIsContactOptionOpen] = useState(false);
   const handleOpenContactOption = () => setIsContactOptionOpen(true);
   const handleCloseContactOption = () => setIsContactOptionOpen(false);

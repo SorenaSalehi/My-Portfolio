@@ -42,7 +42,7 @@ export default function AboutMe() {
           >
             <Typography
               sx={{
-                fontSize: "3vw",
+                fontSize: "clamp(1rem,3vw,2rem)",
                 padding: "0.8rem 0.2rem",
                 textAlign: "center",
               }}
@@ -67,7 +67,6 @@ export default function AboutMe() {
                   i < about.length - 1
                     ? "background.paperFade"
                     : "primary.main",
-                // marginBottom: i === about.length - 1 ? "2rem" : "0",
               }}
             />
           </motion.div>

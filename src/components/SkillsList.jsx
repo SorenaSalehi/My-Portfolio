@@ -71,7 +71,10 @@ export default function SkillsList() {
             <div class="a r"></div>
             <div class="a t"></div>
             <div class="a b"></div>
-            <div class="skill-text" style={{ fontSize: "2vw" }}>
+            <div
+              class="skill-text"
+              style={{ fontSize: "clamp(0.6rem,2vw,1.5rem)", fontWeight: 500 }}
+            >
               {item.sk}
             </div>
           </motion.div>

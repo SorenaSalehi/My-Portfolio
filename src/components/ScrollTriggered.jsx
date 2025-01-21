@@ -1,6 +1,7 @@
 import { Box, Divider, useMediaQuery } from "@mui/material";
 import Card from "./ScrollTriggeredCard";
 import { useTheme } from "@emotion/react";
+import { useCustomTheme } from "../context/CustomThemeProvider";
 
 const data = [
   {
@@ -106,6 +107,8 @@ const data = [
 ];
 
 export default function ScrollTriggered() {
+  const { mode } = useCustomTheme();
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -115,15 +118,13 @@ export default function ScrollTriggered() {
         maxWidth: { xs: 500, md: 1600 },
         paddingBottom: 10,
       }}
+      component={"div"}
+      className={mode ? "card-container" : "bg-header-light"}
+      // bgcolor={"Background.secondary"}
     >
       {data.map((item, i) => (
         <>
-          <Box
-            key={i}
-            component={"div"}
-            className="card-container"
-            bgcolor={"Background.secondary"}
-          >
+          <Box key={i}>
             <Card
               i={i}
               img={item.src}

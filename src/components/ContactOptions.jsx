@@ -46,13 +46,8 @@ const actions = [
 ];
 
 export default function ContactOptions() {
-  //   const [open, setOpen] = React.useState(false);
-  //   const handleOpen = () => setOpen(true);
-  //   const handleClose = () => setOpen(false);
   const {
     isContactOptionOpen,
-
-    handleOpenContactOption,
     handleCloseContactOption,
   } = useCustomTheme();
 
@@ -74,19 +69,6 @@ export default function ContactOptions() {
         },
       }}
     >
-      {/* <Backdrop
-        open={open}
-        sx={{
-          color: "#fff",
-          zIndex: 999,
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-        }}
-        onClick={handleClose}
-      /> */}
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         sx={{
@@ -104,7 +86,6 @@ export default function ContactOptions() {
         }}
         icon={<ContactBtn />}
         onClose={handleCloseContactOption}
-        onOpen={handleOpenContactOption}
         open={isContactOptionOpen}
       >
         {actions.map((action) => (

@@ -7,12 +7,14 @@ export default function DarkModeBtn() {
 
   return (
     <Box
-      onClick={handleChange}
-      sx={{ position: "fixed", bottom: "clamp(0.5rem,1vh,2rem)", left: "3vw" }}
+      sx={{ position: "fixed", bottom: "clamp(0.9rem,1vh,2rem)", left: "3vw" }}
     >
-      <label class="toggle-switch" for="toggle-switch">
-        <input type="checkbox" id="toggle-switch" onClick={handleChange} />
-        <div class="slider"></div>
+      <label class="switch">
+        <input class="cb" type="checkbox" />
+        <span class="toggle" onClick={handleChange}>
+          <span class="left">off</span>
+          <span class="right">on</span>
+        </span>
       </label>
     </Box>
   );

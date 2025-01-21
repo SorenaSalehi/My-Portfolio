@@ -9,11 +9,9 @@ import BottomNav from "./BottomNav";
 import { useCustomTheme } from "../context/CustomThemeProvider";
 
 export default function Home() {
-  const {
-    isContactOptionOpen,
+  const { mode } = useCustomTheme();
 
-    handleCloseContactOption,
-  } = useCustomTheme();
+  const { isContactOptionOpen, handleCloseContactOption } = useCustomTheme();
   return (
     <Box
       height={"100vh"}
@@ -24,6 +22,7 @@ export default function Home() {
       <Backdrop
         open={isContactOptionOpen}
         sx={{
+          bgcolor: "background.backdrop",
           zIndex: 100,
           position: "fixed",
           top: 0,
@@ -38,7 +37,10 @@ export default function Home() {
       <Header />
 
       <AboutMe />
-      <Box component={"div"} className="cards-container">
+      <Box
+        component={"div"}
+        className={mode ? "card-container" : "bg-header-light"}
+      >
         <ScrollTriggered />
       </Box>
       <BottomNav />

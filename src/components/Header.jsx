@@ -9,13 +9,13 @@ import { useCustomTheme } from "../context/CustomThemeProvider";
 import ContactOptions from "./ContactOptions";
 
 export default function Header() {
-  const { theme } = useCustomTheme();
+  const { mode } = useCustomTheme();
   const Theme = useTheme();
   const isMobile = useMediaQuery(Theme.breakpoints.down("sm"));
   return (
     <Box
       component={"div"}
-      bgcolor={"background.header"}
+      className={mode ? "bg-header-dark" : "bg-header-light"}
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"space-evenly"}
@@ -24,12 +24,7 @@ export default function Header() {
       padding={"5rem 0"}
       position={"relative"}
       height={"max-content"}
-      sx={{
-        backgroundImage: `linear-gradient(32deg, ${theme.palette.background.headerFade} 30px, transparent)`,
-        backgroundSize: "60px 60px",
-        backgroundPosition: "-5px -5px",
-        overflow: "hidden",
-      }}
+      overflow={"hidden"}
     >
       <Box
         sx={{
