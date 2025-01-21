@@ -35,10 +35,9 @@ export default function AboutMe() {
               opacity: 1,
               x: 0,
               y: 0,
-
-              transition: { delay: i * 1, duration: 0.8 },
+              transition: { delay: i * 0.5, duration: 0.8 },
             }}
-            viewport={{ once: true }}
+            viewport={{ once: true, threshold: 1 }}
           >
             <Typography
               sx={{
@@ -56,7 +55,7 @@ export default function AboutMe() {
             whileInView={{
               opacity: 1,
               x: 0,
-              transition: { delay: i + 0.5, duration: 0.8 },
+              transition: { delay: i * 0.4, duration: 0.6 },
             }}
             viewport={{ once: true }}
           >

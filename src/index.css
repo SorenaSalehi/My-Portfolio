@@ -85,6 +85,7 @@ p {
 
 /* //*card-container */
 .cards-container {
+  background-color: #3c3d37;
   background-image: linear-gradient(
     32deg,
     rgba(8, 8, 8, 0.74) 30px,
@@ -499,14 +500,14 @@ div.fg {
   cursor: pointer;
   width: 100%;
   height: 100%;
-  background-color: #578e7e;
+  background-color: #0a120e;
   border-radius: 0.1em;
   transition: 0.4s;
   text-transform: uppercase;
   font-weight: 700;
   overflow: hidden;
-  box-shadow: -0.3em 0 0 0 #578e7e, -0.3em 0.3em 0 0 #578e7e,
-    0.3em 0 0 0 #578e7e, 0.3em 0.3em 0 0 #578e7e, 0 0.3em 0 0 #578e7e;
+  box-shadow: -0.3em 0 0 0 #0a120e, -0.3em 0.3em 0 0 #0a120e,
+    0.3em 0 0 0 #0a120e, 0.3em 0.3em 0 0 #0a120e, 0 0.3em 0 0 #0a120e;
 }
 
 .toggle > .left {
@@ -531,7 +532,7 @@ div.fg {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #0a120e;
+  background-color: #578e7e;
   transform-origin: center left;
   transform: rotateY(90deg);
 }
@@ -541,7 +542,7 @@ div.fg {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #0a120e;
+  background-color: #578e7e;
   transform-origin: center bottom;
   transform: rotateX(90deg);
 }

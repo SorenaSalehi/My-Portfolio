@@ -39,7 +39,7 @@ export default function Home() {
       <AboutMe />
       <Box
         component={"div"}
-        className={mode ? "card-container" : "bg-header-light"}
+        className={mode ? "bg-header-dark" : "bg-header-light"}
       >
         <ScrollTriggered />
       </Box>

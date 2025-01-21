@@ -108,7 +108,7 @@ const data = [
 
 export default function ScrollTriggered() {
   const { mode } = useCustomTheme();
-
+  console.log(mode);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -119,8 +119,7 @@ export default function ScrollTriggered() {
         paddingBottom: 10,
       }}
       component={"div"}
-      className={mode ? "card-container" : "bg-header-light"}
-      // bgcolor={"Background.secondary"}
+      className={mode ? "bg-header-dark" : "bg-header-light"}
     >
       {data.map((item, i) => (
         <>

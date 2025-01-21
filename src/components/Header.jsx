@@ -24,6 +24,7 @@ export default function Header() {
       padding={"5rem 0"}
       position={"relative"}
       height={"max-content"}
+      minHeight={"100vh"}
       overflow={"hidden"}
     >
       <Box
