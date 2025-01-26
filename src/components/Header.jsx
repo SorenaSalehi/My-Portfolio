@@ -47,7 +47,7 @@ export default function Header() {
             loading="lazy"
             component="img"
             alt="sorena-img"
-            src="/myImg.webp"
+            src="/MyImg.jpg"
             width={"100%"}
             height={"auto"}
             style={{
