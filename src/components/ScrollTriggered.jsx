@@ -2,6 +2,7 @@ import { Box, Divider, useMediaQuery } from "@mui/material";
 import Card from "./ScrollTriggeredCard";
 import { useTheme } from "@emotion/react";
 import { useCustomTheme } from "../context/CustomThemeProvider";
+import React from "react";
 
 const data = [
   {
@@ -108,7 +109,6 @@ const data = [
 
 export default function ScrollTriggered() {
   const { mode } = useCustomTheme();
-  console.log(mode);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -122,8 +122,8 @@ export default function ScrollTriggered() {
       className={mode ? "bg-header-dark" : "bg-header-light"}
     >
       {data.map((item, i) => (
-        <>
-          <Box key={i}>
+        <React.Fragment key={i}>
+          <Box>
             <Card
               i={i}
               img={item.src}
@@ -137,7 +137,7 @@ export default function ScrollTriggered() {
           {i < data.length - 1 && !isMobile && (
             <Divider variant="middle" sx={{ borderColor: "primary.main" }} />
           )}
-        </>
+        </React.Fragment>
       ))}
     </Box>
   );

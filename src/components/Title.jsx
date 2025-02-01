@@ -23,8 +23,8 @@ export default function Title() {
       viewport={{ once: true }}
     >
       <div className="wrapper">
-        <div class="bg"> Sorena </div>
-        <div class="fg"> Sorena </div>
+        <div className="bg"> Sorena </div>
+        <div className="fg"> Sorena </div>
       </div>
       <Typography
         textAlign={"right"}

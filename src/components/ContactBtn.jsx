@@ -7,13 +7,16 @@ export default function ContactBtn() {
 
   return (
     <Box component={"div"} onClick={handleOpenContactOption}>
-      <button type="button" class="button">
-        <div class="button-top" style={{ fontSize: "clamp(0.6rem,2vw,1rem)" }}>
+      <div className="button">
+        <div
+          className="button-top"
+          style={{ fontSize: "clamp(0.6rem,2vw,1rem)" }}
+        >
           Contact Me
         </div>
-        <div class="button-bottom"></div>
-        <div class="button-base"></div>
-      </button>
+        <div className="button-bottom"></div>
+        <div className="button-base"></div>
+      </div>
     </Box>
   );
 }

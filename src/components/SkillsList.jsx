@@ -34,12 +34,12 @@ export default function SkillsList() {
       sx={{
         backgroundColor: !mode && theme.palette.text.secondary,
         borderRadius: "1rem",
-        py: !mode && "1rem",
-        mx: !mode && "1rem",
+        py: !mode ? "1rem" : 0,
+        mx: !mode ? "1rem" : 0,
       }}
     >
       {skills.map((item, i) => (
-        <>
+        <React.Fragment key={i}>
           <svg style={{ position: "absolute", width: 0, height: 0 }}>
             <filter
               width="3000%"
@@ -57,7 +57,7 @@ export default function SkillsList() {
             </filter>
           </svg>
 
-          <div class="skill-backdrop"></div>
+          <div className="skill-backdrop"></div>
           <motion.div
             className="skill-button"
             initial={{ opacity: 0 }}
@@ -67,18 +67,18 @@ export default function SkillsList() {
               transition: { delay: i * 0.5, duration: 0.5 },
             }}
           >
-            <div class="a l"></div>
-            <div class="a r"></div>
-            <div class="a t"></div>
-            <div class="a b"></div>
+            <div className="a l"></div>
+            <div className="a r"></div>
+            <div className="a t"></div>
+            <div className="a b"></div>
             <div
-              class="skill-text"
+              className="skill-text"
               style={{ fontSize: "clamp(0.6rem,2vw,1.5rem)", fontWeight: 500 }}
             >
               {item.sk}
             </div>
           </motion.div>
-        </>
+        </React.Fragment>
       ))}
     </Box>
   );

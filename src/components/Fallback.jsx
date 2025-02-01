@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import Title from "./Title";
 
 export default function Fallback() {
   return (
@@ -16,7 +15,7 @@ export default function Fallback() {
       <Typography variant="h2" fontFamily={"'Jersey 15', serif"}>
         JS
       </Typography>
-      <div class="loading">
+      <div className="loading">
         <svg width="64px" height="48px">
           <polyline
             points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24"

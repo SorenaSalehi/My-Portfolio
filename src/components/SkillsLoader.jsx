@@ -28,14 +28,14 @@ export default function SkillsLoader() {
         padding: "1rem 2rem",
       }}
     >
-      <div class="loader">
+      <div className="loader">
         <p>Skills Summary:</p>
-        <div class="words">
-          <span class="word">JS</span>
-          <span class="word">React</span>
-          <span class="word">MUI</span>
-          <span class="word">Tailwind</span>
-          <span class="word">JS</span>
+        <div className="words">
+          <span className="word">JS</span>
+          <span className="word">React</span>
+          <span className="word">MUI</span>
+          <span className="word">Tailwind</span>
+          <span className="word">JS</span>
         </div>
       </div>
     </motion.div>

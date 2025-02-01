@@ -29,7 +29,7 @@ export default function AboutMe() {
     >
       {about.map((item, i) => (
         <React.Fragment key={i}>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, x: -50, y: 50 }}
             whileInView={{
               opacity: 1,
@@ -48,7 +48,7 @@ export default function AboutMe() {
             >
               {item.sec}
             </Typography>
-          </motion.p>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 100 }}
