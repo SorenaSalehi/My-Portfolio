@@ -34,7 +34,7 @@ export default function SkillsLoader() {
           <span className="word">JS</span>
           <span className="word">React</span>
           <span className="word">MUI</span>
-          <span className="word">Tailwind</span>
+          <span className="word">TS</span>
           <span className="word">JS</span>
         </div>
       </div>
