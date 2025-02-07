@@ -96,7 +96,7 @@ const data = [
   },
   {
     src: "/1.webp",
-    headline: "1 : Whether Webapp",
+    headline: "1 : Weather Webapp",
     paragraph: [
       { sec: "This Was the first project and its was implemented for" },
       { sec: "the practice of (useState and useEffect)." },
