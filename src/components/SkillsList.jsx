@@ -5,25 +5,119 @@ import { motion } from "motion/react";
 import { useCustomTheme } from "../context/CustomThemeProvider";
 
 const skills = [
-  { sk: "HTML5", bg: "#F16A30", color: "#FFF8F0" },
-  { sk: "CSS3", bg: "#0870C2", color: "#FFF8F0" },
-  { sk: "JavaScript", bg: "#F7CF00", color: "#1E1E24" },
-  { sk: "ReactJs", bg: "#08DAFF", color: "#1E1E24" },
-  { sk: "TypeScript", bg: "#087ECE", color: "#FFF8F0" },
-  { sk: "MaterialUI", bg: "#0061C2", color: "#FFF8F0" },
-  { sk: "Tailwind", bg: "#20B9BC", color: "#1E1E24" },
-  { sk: "Redux", bg: "#7A50BE", color: "#FFF8F0" },
-  { sk: "Github", bg: "#4479C5", color: "#FFF8F0" },
-  { sk: "Git", bg: "#4479C5", color: "#FFF8F0" },
-  { sk: "vite", bg: "#796DD4", color: "#FFF8F0" },
-  { sk: "Context-api", bg: "#08D8FC", color: "#0a120e" },
-  { sk: "React-Query", bg: "#FF4759", color: "#FFF8F0" },
-  { sk: "React-Hook-Form", bg: "#ED5E93", color: "#0a120e" },
-  { sk: "React-Router-Dom", bg: "#D10A22", color: "#FFF8F0" },
-  { sk: "Restful-api", bg: "#089E65", color: "#FFF8F0" },
-  { sk: "Motion-React", bg: "#620CFE", color: "#FFF8F0" },
-  { sk: "Styled-Component", bg: "#FFD568", color: "#0a120e" },
-  { sk: "Supabase", bg: "#37B37C", color: "#FFF8F0" },
+  {
+    sk: "HTML5",
+    bg: "#a63707",
+    color: "#FFF8F0",
+    icon: "/html.png",
+  },
+  {
+    sk: "CSS3",
+    bg: "#06497b",
+    color: "#FFF8F0",
+    icon: "/css.png",
+  },
+  {
+    sk: "JavaScript",
+    bg: "#bd9f06",
+    color: "#FFF8F0",
+    icon: "/js.png",
+  },
+  {
+    sk: "ReactJs",
+    bg: "#024c59",
+    color: "#FFF8F0",
+    icon: "/react.png",
+  },
+  {
+    sk: "TypeScript",
+    bg: "#044977",
+    color: "#FFF8F0",
+    icon: "/ts.png",
+  },
+  {
+    sk: "MaterialUI",
+    bg: "#013f7d",
+    color: "#FFF8F0",
+    icon: "/mui.png",
+  },
+  {
+    sk: "Tailwind",
+    bg: "#157274",
+    color: "#FFF8F0",
+    icon: "/tailwind.png",
+  },
+  {
+    sk: "Redux",
+    bg: "#30204a",
+    color: "#FFF8F0",
+    icon: "/redux.png",
+  },
+  {
+    sk: "Github",
+    bg: "#3b6cb1",
+    color: "#FFF8F0",
+    icon: "/github.png",
+  },
+  {
+    sk: "Git",
+    bg: "#7f290f",
+    color: "#FFF8F0",
+    icon: "/git.png",
+  },
+  {
+    sk: "vite",
+    bg: "#796DD4",
+    color: "#FFF8F0",
+    icon: "/vite.png",
+  },
+  {
+    sk: "Context-api",
+    bg: "#024c59",
+    color: "#FFF8F0",
+    icon: "/react.png",
+  },
+  {
+    sk: "React-Query",
+    bg: "#8a2c35",
+    color: "#FFF8F0",
+    icon: "/query.png",
+  },
+  {
+    sk: "React-Hook-Form",
+    bg: "#66293f",
+    color: "#FFF8F0",
+    icon: "/form.png",
+  },
+  {
+    sk: "React-Router-Dom",
+    bg: "#860413",
+    color: "#FFF8F0",
+    icon: "/router.png",
+  },
+  {
+    sk: "Restful-api",
+    bg: "#025e3b",
+    color: "#FFF8F0",
+    icon: "/api.png",
+  },
+  {
+    sk: "Motion-React",
+    bg: "#330882",
+    color: "#FFF8F0",
+    icon: "/motion.png",
+  },
+  {
+    sk: "Styled-Component",
+    bg: "#90783d",
+    color: "#FFF8F0",
+  },
+  {
+    sk: "Supabase",
+    bg: "#1e5f42",
+    color: "#FFF8F0",
+    icon: "/supabase.png",
+  },
 ];
 
 export default function SkillsList() {
@@ -77,6 +171,7 @@ export default function SkillsList() {
             <div className="a r"></div>
             <div className="a t"></div>
             <div className="a b"></div>
+
             <div
               className="skill-text"
               style={{
@@ -85,6 +180,20 @@ export default function SkillsList() {
                 color: item.color,
               }}
             >
+              <Box
+                sx={{ width: "1.5em", display: "flex", alignItems: "center" }}
+              >
+                {item.icon ? (
+                  <img
+                    src={item.icon}
+                    loading="lazy"
+                    width={"80%"}
+                    // height={"20%"}
+                  />
+                ) : (
+                  "💅"
+                )}
+              </Box>
               {item.sk}
             </div>
           </motion.div>

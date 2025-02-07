@@ -230,12 +230,17 @@ div.fg {
 .skill-button {
   position: relative;
   border: none;
-  padding: 0.1rem 0.3rem;
+  padding: 0.1em 0.8em;
+  max-width: min-content;
 }
 
 .skill-text {
+  text-wrap: nowrap;
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .skill-button::before {
