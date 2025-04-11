@@ -6,6 +6,42 @@ import React from "react";
 
 const data = [
     {
+        src: "/6.webp",
+
+        headline: "6 : 888 Computer airdrop ",
+        paragraph: [
+            {
+                sec: "(vira vision Co.)",
+            },
+            {
+                sec: "This project is built on the idea of disconnecting from technology.",
+            },
+            { sec: " Users can start mining with a single tap," },
+
+            {
+                sec: "but if they touch their device, mining stops! 🎯",
+            },
+
+            { sec: "I was fully responsible for the frontend development." },
+            { sec: "Key challenges I tackled:" },
+
+            {
+                sec: "Pausing mining for 5 seconds and resuming if the user continues, or resetting if they don’t",
+            },
+
+            { sec: "Sending requests to the server every 6 minutes" },
+            {
+                sec: "Alerting users when they touch the screen, keyboard, or mouse",
+            },
+            { sec: "Upcoming Features:" },
+            { sec: "Upgrading the mining system" },
+            { sec: "Extending mining time (currently max 6 hours/day)" },
+            { sec: "Adding an auto-mining bot" },
+        ],
+        tech: "React.js, Vite, MUI, React Query, Motion, Ton Connect Wallet, React Hot Toast, Swapper.js",
+        link: "https://t.me/Computer888_Bot",
+    },
+    {
         src: "/5.webp",
 
         headline: "5 : DuckPump Telegram mini app",
