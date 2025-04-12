@@ -9,35 +9,37 @@ import { useCustomTheme } from "../context/CustomThemeProvider";
 import ContactOptions from "./ContactOptions";
 
 export default function Header() {
-  const { mode } = useCustomTheme();
-  const Theme = useTheme();
-  const isMobile = useMediaQuery(Theme.breakpoints.down("sm"));
-  return (
-    <Box
-      component={"div"}
-      className={mode ? "bg-header-dark" : "bg-header-light"}
-      display={"flex"}
-      flexDirection={"column"}
-      justifyContent={"space-evenly"}
-      alignItems={"center"}
-      gap={4}
-      padding={"5rem 0"}
-      position={"relative"}
-      height={"max-content"}
-      minHeight={"100vh"}
-      overflow={"hidden"}
-    >
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: isMobile ? "1" : "repeat(2,auto)",
-          gridTemplateRows: isMobile ? "repeat(3,auto)" : "repeat(1,auto)",
-          justifyItems: "center",
-          alignItems: "center",
-          px: isMobile ? 0 : 8,
-        }}
-      >
+    const { mode } = useCustomTheme();
+    const Theme = useTheme();
+    const isMobile = useMediaQuery(Theme.breakpoints.down("sm"));
+    return (
         <Box
+            component={"div"}
+            className={mode ? "bg-header-dark" : "bg-header-light"}
+            display={"flex"}
+            flexDirection={"column"}
+            justifyContent={"space-evenly"}
+            alignItems={"center"}
+            gap={4}
+            padding={"5rem 0"}
+            position={"relative"}
+            height={"max-content"}
+            minHeight={"100vh"}
+            overflow={"hidden"}
+        >
+            <Box
+                sx={{
+                    display: "grid",
+                    gridTemplateColumns: isMobile ? "1" : "repeat(2,auto)",
+                    gridTemplateRows: isMobile
+                        ? "repeat(3,auto)"
+                        : "repeat(1,auto)",
+                    justifyItems: "center",
+                    alignItems: "center",
+                    px: isMobile ? 0 : 8,
+                }}
+            >
+                {/* <Box
           width={"50%"}
           borderRadius={"1rem"}
           overflow={"hidden"}
@@ -68,26 +70,26 @@ export default function Header() {
             }}
             viewport={{ once: true }}
           />
+        </Box> */}
+
+                <Title />
+
+                <SkillsLoader />
+            </Box>
+
+            <SkillsList />
+
+            <Typography
+                position={"absolute"}
+                bottom={0}
+                borderBottom={1}
+                borderColor={"primary.main"}
+                letterSpacing={2}
+                fontFamily={"'Jersey 15', serif"}
+                fontSize={"5vw"}
+            >
+                Where Did it Start?
+            </Typography>
         </Box>
-
-        <Title />
-
-        <SkillsLoader />
-      </Box>
-
-      <SkillsList />
-
-      <Typography
-        position={"absolute"}
-        bottom={0}
-        borderBottom={1}
-        borderColor={"primary.main"}
-        letterSpacing={2}
-        fontFamily={"'Jersey 15', serif"}
-        fontSize={"5vw"}
-      >
-        Where Did it Start?
-      </Typography>
-    </Box>
-  );
+    );
 }
