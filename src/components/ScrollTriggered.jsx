@@ -100,7 +100,7 @@ const data = [
         ],
         tech: "React.js, React Router , React Query, Redux, Tailwind CSS, motion Ui,React Toastify, Lazy Loading, reusable components, custom hooks, modern file structure, UI design, AI integration.",
         on: "Nov 14, 2024",
-        link: "https://t.me/tonportalprobot",
+        link: "https://portal-mini-app.netlify.app/",
     },
 
     {
