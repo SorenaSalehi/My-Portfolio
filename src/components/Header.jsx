@@ -39,38 +39,38 @@ export default function Header() {
                     px: isMobile ? 0 : 8,
                 }}
             >
-                {/* <Box
-          width={"50%"}
-          borderRadius={"1rem"}
-          overflow={"hidden"}
-          position={"relative"}
-        >
-          <motion.img
-            loading="lazy"
-            component="img"
-            alt="sorena-img"
-            src="/MyImg.jpg"
-            width={"100%"}
-            height={"auto"}
-            style={{
-              objectFit: "cover",
-              opacity: 0.9,
-            }}
-            key="img"
-            initial={{ opacity: 0, scaleX: 0.8 }}
-            animate={{
-              opacity: 1,
-              scaleX: 1,
-              transition: { delay: 0.5, duration: 0.5 },
-            }}
-            exit={{
-              opacity: 0,
-              y: 50,
-              transition: { duration: 0.5 },
-            }}
-            viewport={{ once: true }}
-          />
-        </Box> */}
+                <Box
+                    width={"50%"}
+                    borderRadius={"1rem"}
+                    overflow={"hidden"}
+                    position={"relative"}
+                >
+                    <motion.img
+                        loading="lazy"
+                        component="img"
+                        alt="sorena-img"
+                        src="/MyImg.jpg"
+                        width={"100%"}
+                        height={"auto"}
+                        style={{
+                            objectFit: "cover",
+                            opacity: 0.9,
+                        }}
+                        key="img"
+                        initial={{ opacity: 0, scaleX: 0.8 }}
+                        animate={{
+                            opacity: 1,
+                            scaleX: 1,
+                            transition: { delay: 0.5, duration: 0.5 },
+                        }}
+                        exit={{
+                            opacity: 0,
+                            y: 50,
+                            transition: { duration: 0.5 },
+                        }}
+                        viewport={{ once: true }}
+                    />
+                </Box>
 
                 <Title />
 

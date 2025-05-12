@@ -23,8 +23,8 @@ export default function Title() {
             viewport={{ once: true }}
         >
             <div className="wrapper">
-                <div className="bg"> About me </div>
-                <div className="fg"> About me </div>
+                <div className="bg"> About Sorena </div>
+                <div className="fg"> About Sorena </div>
             </div>
         </motion.div>
     );
