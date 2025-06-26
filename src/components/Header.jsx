@@ -1,12 +1,10 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import React from "react";
 import { motion } from "motion/react";
 
 import Title from "./Title";
 import SkillsLoader from "./SkillsLoader";
 import SkillsList from "./SkillsList";
 import { useCustomTheme } from "../context/CustomThemeProvider";
-import ContactOptions from "./ContactOptions";
 
 export default function Header() {
     const { mode } = useCustomTheme();

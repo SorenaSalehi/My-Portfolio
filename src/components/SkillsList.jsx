@@ -24,10 +24,16 @@ const skills = [
         icon: "/js.png",
     },
     {
-        sk: "ReactJs",
+        sk: "React",
         bg: "#024c59",
         color: "#FFF8F0",
         icon: "/react.png",
+    },
+    {
+        sk: "Next",
+        bg: "#000c0e",
+        color: "#FFF8F0",
+        icon: "/next.svg",
     },
     {
         sk: "TypeScript",

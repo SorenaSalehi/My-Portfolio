@@ -6,12 +6,50 @@ import React from "react";
 
 const data = [
     {
-        src: "/6.webp",
+        src: "/8.jpg",
 
-        headline: "6 : 888 Computer airdrop ",
+        headline: "8 : Wigenzo PSC e-commerce ",
         paragraph: [
             {
-                sec: "(vira vision Co.)",
+                sec: "(Wigenzo Company)",
+            },
+            {
+                sec: "An e-commerce platform for computer products and accessories..",
+            },
+            {
+                sec: "In this project, I was responsible for the complete development",
+            },
+
+            {
+                sec: "of the Frontend of the company's online sales website.",
+            },
+
+            { sec: "Approaches and responsibilities:" },
+            {
+                sec: "Developing ready-to-use interfaces for API integration and participation in testing processes",
+            },
+
+            {
+                sec: "Optimize performance and ensure compatibility with different browsers",
+            },
+
+            {
+                sec: "In this project, by prioritizing user experience, a fast structure,",
+            },
+            {
+                sec: "I created a reliable and user-friendly front-end for the website and helped improve Wigenzo's digital sales platform.",
+            },
+        ],
+        tech: "Bootstrap5 , JS , HTML5 , Css ,Restful api , performance optimization , UI/UX , Split code , clean code ",
+        link: "https://wigenzo.com.tr/",
+    },
+    {
+        src: "/7.webp",
+
+        headline: "7 : 888 Computer airdrop ",
+        paragraph: [
+            {
+                sec: "(Vira vision Company)",
             },
             {
                 sec: "This project is built on the idea of disconnecting from technology.",
@@ -42,10 +80,46 @@ const data = [
         link: "https://t.me/Computer888_Bot",
     },
     {
+        src: "/6.jpg",
+
+        headline: "6 : Khosh-shans (an Horoscope webapp)",
+        paragraph: [
+            {
+                sec: "(Vira vision Company)",
+            },
+            {
+                sec: "Each user has 3 chances to spin the wheel every hour,",
+            },
+            { sec: " with which they can choose their fortune" },
+
+            {
+                sec: "Challenges:Implementing a wheel of fortune ",
+            },
+
+            { sec: "using vanilla CSS and storing user's fortunes locally" },
+
+            {
+                sec: "Using animation to display cards,",
+            },
+
+            {
+                sec: "And making cards responsive and displaying them to the user.",
+            },
+            {
+                sec: "100% site design without a preliminary plan.",
+            },
+        ],
+        tech: "React.js, React Router, Vite, Material UI, Context API, design , performance optimization, Motion React",
+        link: "https://metafal.xyz/",
+    },
+    {
         src: "/5.webp",
 
         headline: "5 : DuckPump Telegram mini app",
         paragraph: [
+            {
+                sec: "(Exilera Company)",
+            },
             {
                 sec: "This Telegram mini-app aims to simplify the Web3 for everyone.",
             },
@@ -76,9 +150,9 @@ const data = [
             { sec: "(on the Jan 18, 2025)" },
         ],
         tech: "React.js, React Router, Vite, Material UI, Context API, OKXTonConnect, Motion React, and more!",
-        on: "Jan 2, 2025",
         link: "https://duck-pump-tel-mini-app.netlify.app/",
     },
+
     {
         src: "/4.webp",
         headline: "4 : Ton Portal Telegram mini app ",
@@ -99,7 +173,6 @@ const data = [
             },
         ],
         tech: "React.js, React Router , React Query, Redux, Tailwind CSS, motion Ui,React Toastify, Lazy Loading, reusable components, custom hooks, modern file structure, UI design, AI integration.",
-        on: "Nov 14, 2024",
         link: "https://portal-mini-app.netlify.app/",
     },
 
@@ -120,7 +193,6 @@ const data = [
         ],
 
         tech: "Redux, React.js (React-Router-Dom, lazy loading, reusable components, and custom hooks), Tailwind CSS ,responsive design",
-        on: "Oct 26, 2024",
         link: "https://react-quiz-advance.netlify.app/",
     },
     {
@@ -139,7 +211,6 @@ const data = [
             { sec: "save tasks locally using local storage." },
         ],
         tech: "React.js (useContext, useReducer, React-Router-Dom, lazy loading, reusable components, and custom hooks), Css ,responsive design",
-        on: "Oct 9, 2024",
         link: "https://to-do-by-sorena.netlify.app/",
     },
     {
@@ -150,7 +221,6 @@ const data = [
             { sec: "the practice of (useState and useEffect)." },
         ],
         tech: "React.js (useState and useEffect) , Rest-api , Css ,responsive design",
-        on: "Sep 15, 2024",
         link: "https://weather-react-intermediate.netlify.app/",
     },
 ];
