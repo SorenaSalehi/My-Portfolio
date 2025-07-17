@@ -3,21 +3,25 @@ import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 const about = [
-    { sec: "I finally found my path in Frontend web development." },
-    { sec: "I started learning HTML and CSS through YouTube tutorials," },
-    { sec: "diving into the world of web development." },
     {
-        sec: "Shortly after, I took a JavaScript course by Jonas Schmedtmann on Udemy,",
+        sec: "Art and creativity have always inspired me, and front-end development naturally captured my attention.",
     },
-    { sec: " which included around nine hands-on JS projects." },
-    { sec: "The course fueled my passion," },
     {
-        sec: "and I continued my journey by learning React.js , TypeScript ,and Next.js.",
+        sec: "After pushing through a challenging personal chapter and finishing my Software Engineering degree,",
     },
-    { sec: " Below, you'll find some of the projects " },
-    { sec: "Of companies and myself" },
-    { sec: " that i've designed and built." },
-    { sec: "I'm eagerly looking forward to hearing your thoughts!" },
+    { sec: "I chose to chase that spark on the front-end path." },
+    {
+        sec: "I first sharpened my skills with roughly nine hands-on JavaScript projects.",
+    },
+    { sec: "Eager for more, I dove into React, TypeScript, and Next.js," },
+    { sec: "where I found the perfect blend of logic and visual expression." },
+    {
+        sec: "Below, you’ll see a selection of projects I’ve designed and built—",
+    },
+    {
+        sec: "some for forward-thinking companies, others for my own creative exploration.",
+    },
+    { sec: "I’d love to hear what you think!" },
 ];
 
 export default function AboutMe() {

@@ -20,7 +20,7 @@ export default function Nav() {
         >
             <Typography
                 sx={{
-                    color: "#ccc7c7",
+                    color: "text-primary",
                     boxShadow: 2,
                     fontWeight: 900,
                     mr: "auto",
