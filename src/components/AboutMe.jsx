@@ -4,24 +4,46 @@ import { motion } from "motion/react";
 
 const about = [
     {
-        sec: "Art and creativity have always inspired me, and front-end development naturally captured my attention.",
+        sec: "Art and creativity have always been my north star,",
     },
     {
-        sec: "After pushing through a challenging personal chapter and finishing my Software Engineering degree,",
+        sec: "And the web—alive and interactive—felt like the perfect canvas.",
     },
-    { sec: "I chose to chase that spark on the front-end path." },
+
     {
-        sec: "I first sharpened my skills with roughly nine hands-on JavaScript projects.",
-    },
-    { sec: "Eager for more, I dove into React, TypeScript, and Next.js," },
-    { sec: "where I found the perfect blend of logic and visual expression." },
-    {
-        sec: "Below, you’ll see a selection of projects I’ve designed and built—",
+        sec: "After earning my Software Engineering degree,",
     },
     {
-        sec: "some for forward-thinking companies, others for my own creative exploration.",
+        sec: "I doubled-down on the part I loved most—the front-end.",
     },
-    { sec: "I’d love to hear what you think!" },
+    {
+        sec: "To sharpen the craft, I built nine pure-JavaScript as experiments.",
+    },
+    {
+        sec: "Curiosity led me to React, TypeScript, and Next.js, where structure meets imagination.",
+    },
+    {
+        sec: "Soon I was shipping production UIs: an e-commerce marketplace for gamers,",
+    },
+    {
+        sec: "A legal-case dashboard lawyers actually enjoy using, AI tools that turn sentences into code,",
+    },
+    {
+        sec: "And Web3 mini-apps that make crypto feel simple.",
+    },
+    {
+        sec: "Today, I still chase that spark: watching an idea morph from sketch to live site",
+    },
+    {
+        sec: "And seeing real users click, scroll, and smile.",
+    },
+
+    {
+        sec: "Browse around, peek at the code, and tell me what sparks your imagination;",
+    },
+    {
+        sec: "I’d love to craft the next story together.",
+    },
 ];
 
 export default function AboutMe() {
